@@ -1,0 +1,52 @@
+PODS:
+  - BBCamera (0.0.1):
+    - Masonry
+    - pop
+  - DACircularProgress (2.3.1)
+  - FLAnimatedImage (1.0.12)
+  - Masonry (1.0.2)
+  - PINCache (2.3)
+  - PINRemoteImage (2.1.4):
+    - PINRemoteImage/FLAnimatedImage (= 2.1.4)
+  - PINRemoteImage/Core (2.1.4):
+    - PINCache (>= 2.1)
+  - PINRemoteImage/FLAnimatedImage (2.1.4):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
+  - pop (1.0.9)
+  - SDWebImage (4.0.0):
+    - SDWebImage/Core (= 4.0.0)
+  - SDWebImage/Core (4.0.0)
+  - SVProgressHUD (2.1.2)
+
+DEPENDENCIES:
+  - BBCamera (from `https://git.coding.net/Gary100/BBCamera.git`)
+  - DACircularProgress
+  - PINRemoteImage
+  - pop
+  - SDWebImage
+  - SVProgressHUD
+
+EXTERNAL SOURCES:
+  BBCamera:
+    :git: https://git.coding.net/Gary100/BBCamera.git
+
+CHECKOUT OPTIONS:
+  BBCamera:
+    :commit: 6f1b24eea15bef16676596d1afbd0ea7d0da8eb8
+    :git: https://git.coding.net/Gary100/BBCamera.git
+
+SPEC CHECKSUMS:
+  BBCamera: aeb787c2cd3e1d85003d2262df7aefaf899a99ac
+  DACircularProgress: 4dd437c0fc3da5161cb289e07ac449493d41db71
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  Masonry: 7c429b56da9d4ee0bbb3ed77a5ea710d6a5df39e
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
+  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
+  SDWebImage: 76a6348bdc74eb5a55dd08a091ef298e56b55e41
+  SVProgressHUD: c404a55d78acbeb7ebb78b76d3faf986475a6994
+
+PODFILE CHECKSUM: d53f9d20ed3eb8bf011487ec899a0a881c7eaa31
+
+COCOAPODS: 1.2.0
