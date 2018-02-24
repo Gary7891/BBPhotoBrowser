@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "BBPhotoBrowser"
-  s.version      = "0.0.3"
+  s.version      = "0.0.6"
   s.summary      = "iOS照片浏览框架"
   s.homepage     = "https://git.tticar.com/tticar/BBPhotoBrowser"
   s.license      = "Copyright (C) 2015 Gary, Inc.  All rights reserved."

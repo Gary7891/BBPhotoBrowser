@@ -66,9 +66,10 @@
 - (void)onViewClick:(id)sender {
     // Create browser
     BBLibraryViewController *viewController = [[BBLibraryViewController alloc]init];
-    viewController.allowsImageCrop = YES;
-    viewController.maxSelectedCount = 1;
-    viewController.allowsMultipleSelection = NO;
+    viewController.allowsImageCrop = NO;
+    viewController.maxSelectedCount = 2;
+    viewController.allowsMultipleSelection = YES;
+    viewController.libraryControllerDelegate = self;
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:viewController];
     nc.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     nc.toolbarHidden = NO;

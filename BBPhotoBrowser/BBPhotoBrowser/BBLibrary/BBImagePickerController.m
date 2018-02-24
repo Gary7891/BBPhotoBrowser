@@ -356,8 +356,10 @@
     _selectedAssetBadgeImage = BBPhotoBrowserImageNamed(@"BBLibraryCollectionSelected");
     
     _cancelButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(cancel:)];
-    _cancelButton.tintColor = [UIColor whiteColor];
-    self.navigationItem.rightBarButtonItem = _cancelButton;
+    _cancelButton.tintColor = [UIColor blackColor];
+    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    spaceItem.width = 15;
+    self.navigationItem.rightBarButtonItems = @[spaceItem,_cancelButton];
     
     _doneButton = [[UIBarButtonItem alloc] initWithTitle:nil style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
     //    self.navigationItem.rightBarButtonItem = _doneButton;
@@ -378,7 +380,7 @@
     _collectionButton = [BBCollectionsTitleButton buttonWithType:UIButtonTypeSystem];
     [_collectionButton addTarget:self action:@selector(changeCollection:) forControlEvents:UIControlEventTouchUpInside];
     _collectionButton.titleLabel.font = [UIFont boldSystemFontOfSize:17.0];
-    _collectionButton.tintColor = [UIColor whiteColor];
+    _collectionButton.tintColor = [UIColor blackColor];
     _collectionButton.imageEdgeInsets = UIEdgeInsetsMake(0.0, 3.0, 0.0, 0.0);
     [_collectionButton setImage:[BBPhotoBrowserImageNamed(@"BBLibraryCollectionNavDisclosure") imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
     [_collectionButton sizeToFit];

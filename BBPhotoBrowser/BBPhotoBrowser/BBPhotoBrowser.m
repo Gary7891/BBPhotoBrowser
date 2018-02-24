@@ -316,9 +316,13 @@ static void * BBVideoPlayerObservation = &BBVideoPlayerObservation;
     }
     
     if (_displaySelectionButtons) {
-       _navigationItem.rightBarButtonItems = @[_doneButton,fixedSpace];
+        UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFixedSpace target:nil action:nil];
+        spaceItem.width = 15;
+       _navigationItem.rightBarButtonItems = @[spaceItem,_doneButton];
     }
-    _navigationItem.leftBarButtonItems = @[_backButton];
+    UIBarButtonItem *spaceItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem: UIBarButtonSystemItemFixedSpace target:nil action:nil];
+    spaceItem.width = 15;
+    _navigationItem.leftBarButtonItems = @[spaceItem,_backButton];
     BOOL hideToolbar = YES;
     for (UIBarButtonItem* item in _toolbar.items) {
         if (item != fixedSpace && item != flexSpace) {
