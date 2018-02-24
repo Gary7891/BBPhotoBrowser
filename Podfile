@@ -3,7 +3,7 @@ platform :ios, '7.0'
 inhibit_all_warnings!
 target 'BBPhotoBrowser' do 
 pod 'pop'
-pod 'SDWebImage'
+pod 'SDWebImage', :git => 'https://git.tticar.com/pods/Specs.git'
 pod 'PINRemoteImage'
 pod 'DACircularProgress'
 pod 'SVProgressHUD'
