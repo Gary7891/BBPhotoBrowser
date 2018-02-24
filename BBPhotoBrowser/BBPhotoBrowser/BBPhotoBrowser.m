@@ -1413,7 +1413,11 @@ static void * BBVideoPlayerObservation = &BBVideoPlayerObservation;
     CGFloat height = 64;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone &&
         UIInterfaceOrientationIsLandscape(orientation)) height = 52;
-    return CGRectIntegral(CGRectMake(0, 0, self.view.bounds.size.width, height));
+    CGFloat top = 0;
+    if ([UIDevice currentDevice].systemVersion.floatValue >= 11.0f) {
+        top = 20;
+    }
+    return CGRectIntegral(CGRectMake(0, top, self.view.bounds.size.width, height));
 }
 
 - (CGRect)frameForCaptionView:(BBPhotoCaptionView *)captionView atIndex:(NSUInteger)index {
