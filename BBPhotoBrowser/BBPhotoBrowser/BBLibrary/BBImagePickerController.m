@@ -207,6 +207,7 @@
     NSDateComponents *currentDateComponents = [calendar components:NSCalendarUnitYear fromDate:currentDate];
     NSDateFormatter *formatter = [[NSDateFormatter alloc]init];
     NSMutableArray *tempArr = [NSMutableArray array];
+    [SVProgressHUD showInfoWithStatus:BBPhotoBrowserLocalizedStrings(@"Loading Photos")];
     for (PHAssetCollection *collection in _moments) {
         BBMomentHeaderModel *model = [[BBMomentHeaderModel alloc] init];
         NSString *dateStr = @"";
@@ -247,6 +248,7 @@
         }
         [tempArr addObject:model];
     }
+    [SVProgressHUD dismiss];
     _headerModelsArr = [NSArray arrayWithArray:tempArr];
 }
 

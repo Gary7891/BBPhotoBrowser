@@ -247,13 +247,13 @@ static CGSize AssetGridThumbnailSize;
     UIBarButtonItem *flexSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:nil];
     NSMutableArray *items = [[NSMutableArray alloc] init];
     UIBarButtonItem *doneButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.selectedButton];
-    UIBarButtonItem *collectionButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"相册"
-                                                                             style:UIBarButtonItemStyleDone
-                                                                            target:self
-                                                                            action:@selector(showAlbumList)];
+//    UIBarButtonItem *collectionButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"相册"
+//                                                                             style:UIBarButtonItemStyleDone
+//                                                                            target:self
+//                                                                            action:@selector(showAlbumList)];
     
     [items addObject:fixedSpace];
-    [items addObject:collectionButtonItem];
+//    [items addObject:collectionButtonItem];
     [items addObject:flexSpace];
     [items addObject:doneButtonItem];
     [items addObject:fixedSpace];
@@ -271,7 +271,7 @@ static CGSize AssetGridThumbnailSize;
         _selectedButton.layer.masksToBounds = YES;
         _selectedButton.layer.cornerRadius = 4;
         [_selectedButton setTitle:@"完成" forState:UIControlStateNormal];
-        [_selectedButton setFrame:CGRectMake(0, 0, 100, 32)];
+        [_selectedButton setFrame:CGRectMake(0, 0, 150, 32)];
         [_selectedButton addTarget:self action:@selector(onViewClick:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _selectedButton;

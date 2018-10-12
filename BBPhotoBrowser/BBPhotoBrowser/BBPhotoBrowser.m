@@ -31,6 +31,24 @@ block();\
 dispatch_async(dispatch_get_main_queue(), block);\
 }
 
+#define ScreenWidth  [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight   [UIScreen mainScreen].bounds.size.height
+
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+#define SCREEN_MAX_LENGTH (MAX(ScreenWidth, ScreenHeight))
+#define SCREEN_MIN_LENGTH (MIN(ScreenWidth, ScreenHeight))
+
+#define IS_IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+#define IS_IPHONE_X (IS_IPHONE && SCREEN_MAX_LENGTH == 812.0)
+
+#define kNavStatebarHeight (IS_IPHONE_X ? 88 : 64)
+
 @interface BBPhotoBrowser() <BBPhotoTagViewDelegate> {
     BOOL            _tagOnView;
     CGPoint         _editPoint;
@@ -683,6 +701,8 @@ static void * BBVideoPlayerObservation = &BBVideoPlayerObservation;
     // Super
     [super viewWillAppear:animated];
     
+    
+    _navigationBar.frame = [self frameForNavbarAtOrientation:[[UIApplication sharedApplication] statusBarOrientation]];
     // Status bar
     if (!_viewHasAppearedInitially) {
         _leaveStatusBarAlone = [self presentingViewControllerPrefersStatusBarHidden];
@@ -1410,12 +1430,12 @@ static void * BBVideoPlayerObservation = &BBVideoPlayerObservation;
 }
 
 - (CGRect)frameForNavbarAtOrientation:(UIInterfaceOrientation)orientation {
-    CGFloat height = 64;
+    CGFloat height = kNavStatebarHeight;
     if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone &&
         UIInterfaceOrientationIsLandscape(orientation)) height = 52;
     CGFloat top = 0;
     if ([UIDevice currentDevice].systemVersion.floatValue >= 11.0f) {
-        top = 20;
+        top = IS_IPHONE_X ? 40: 20;
     }
     return CGRectIntegral(CGRectMake(0, top, self.view.bounds.size.width, height));
 }

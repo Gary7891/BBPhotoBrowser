@@ -67,7 +67,8 @@
     // Create browser
     BBLibraryViewController *viewController = [[BBLibraryViewController alloc]init];
     viewController.allowsImageCrop = NO;
-    viewController.maxSelectedCount = 2;
+//    viewController.maxSelectedCount = 2;
+    viewController.maximumNumberOfSelection = 2;
     viewController.allowsMultipleSelection = YES;
     viewController.libraryControllerDelegate = self;
     UINavigationController *nc = [[UINavigationController alloc] initWithRootViewController:viewController];
