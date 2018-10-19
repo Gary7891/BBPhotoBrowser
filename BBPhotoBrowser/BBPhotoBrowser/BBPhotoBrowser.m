@@ -45,7 +45,7 @@ dispatch_async(dispatch_get_main_queue(), block);\
 #define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
 #define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
 #define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
-#define IS_IPHONE_X (IS_IPHONE && SCREEN_MAX_LENGTH == 812.0)
+#define IS_IPHONE_X (IS_IPHONE && (SCREEN_MAX_LENGTH == 812.0 || SCREEN_MAX_LENGTH == 896.0))
 
 #define kNavStatebarHeight (IS_IPHONE_X ? 88 : 64)
 
